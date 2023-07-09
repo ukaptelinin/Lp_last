@@ -1,12 +1,23 @@
 <?php
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
+use PHPMailer\PHPMailer\SMTP;
 
 require 'phpmailer/src/Exception.php';
 require 'phpmailer/src/PHPMailer.php';
+require 'phpmailer/src/SMTP.php';
+// require 'phpmailer/src/OAuth.php';
 
 $mail = new PHPMailer(true);
 $mail->CharSet = "UTF-8";
+$mail->isSMTP();
+$mail->Host = 'mail.hostland.ru';
+$mail->SMTPAuth = true;
+$mail->Username = 'application@lecalis-consiliarius.ru';
+$mail->Password = 'QbVjoUoLKh';
+$mail->SMTPSecure = 'ssl';
+$mail->Port = '465';
+$mail->From = 'application@lecalis-consiliarius.ru';
 $mail->isHTML(true);
 if(isset($_POST["sum_of_debt"])){
      $sum_of_debt= $_POST["sum_of_debt"];
@@ -51,6 +62,7 @@ if(isset($_POST["sum_of_debt"])){
 
 
 $mail->addAddress("psi_prep@mail.ru");
+//$mail->addAddress("100-21@mail.ru");
 
 $mail->Subject = $theme;
 $mail->MsgHTML($body);

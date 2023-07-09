@@ -37,6 +37,7 @@ body {
     background-color: #000;
     color: #fff;
     font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 18px;
 }
 
 .wrapper {
@@ -102,7 +103,9 @@ body {
    position: relative;
 }*/
 
-
+.hidden {
+    display: none;
+}
 .page {
     padding: 62px 0px 30px 0px;
 }
@@ -143,10 +146,26 @@ body {
     align-items: center;
 }
 
+.description {
+    width: 80%;
+    font-size: 18px;
+}
+
+.description-title {
+font-size: 24px;
+font-weight: 700;
+color: #4419df;
+}
+
+.cons-reason li{
+    list-style: square;
+}
+
 .page__main-image-1{
     width: 90%;
     padding: 10px;
     text-align: center;
+    margin-bottom: 20px;
 }
 
 .page__main-image-1 img {
@@ -181,6 +200,12 @@ body {
     
 }
 
+.page__cons-list {
+    width: 80%;
+}
+.page__cons-list-item {
+    font-size: 18px;
+}
 .page__main-image-4{
     width: 90%;
     padding: 10px;
@@ -191,15 +216,13 @@ body {
     width: 90%;
   }
 
-.page__main-image-6{
+.page__main-image-6 {
     width: 90%;
-    padding: 10px;
-    text-align: center;
+    height: 600px;
+    background: url("../img/bankrot6.jpg") no-repeat 50% 50% ;
 }
 
-.page__main-image-6 img {
-  width: 90%;
-}
+
 .page__main-header-text {
     font-size: 24px;
     color: darkblue;
@@ -209,6 +232,11 @@ body {
     font-size: 18px;
     font-weight: 700;
 }
+
+.page__choice-list li {
+    padding-left: 10px;
+}
+
 .page__cons-article {
     color: blueviolet;
 }
@@ -223,21 +251,20 @@ body {
 }
 
 .page__choice {
+    font-size: 18px;
     margin-top: 20px;
     display: flex;
     justify-content: space-around;
 }
 
-/*.page__choice-1 .page__choice-2 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}*/
+.page__choice-1, .page__choice-2 {
+   padding-left: 0;
+}
 
 .page__choice-header-text {
     font-weight: bold;
     font-size: 18px;
-    padding-left: 80px;
+    padding-left: 10px;
 }
 
 .page__sub-title {
@@ -274,6 +301,7 @@ body {
 .page__contact-wr h3 {
     padding-left: 27px;
 }
+
 
 .acc_header {
     font-size: 15px;
@@ -479,10 +507,11 @@ label {
     font-size: 18px;
     margin: 0px auto 0px auto;
     cursor: pointer;
-    max-width: 30%;
+    width: 88%;
     background-color: darkgreen;
-    padding: 8px 20px;
-    border-radius: 20px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border-radius: 5px;
     color: #fff;
     transition: background-color 0.5s ease 0s; 
 }
@@ -500,7 +529,7 @@ label {
 .accordeon-header {
     font-size: 20px;
     color: rgb(8, 8, 116);
-    padding: 20px;
+    padding: 10px 10% 10px 10%;
     cursor: pointer;
     display: flex;
     justify-content: space-between;
@@ -524,7 +553,7 @@ label {
 }
 
 .accordeon-body > * {
-    padding: 20px;
+    padding: 10px 10% 10px 10%;;
     margin: 0;
     display: block;
     
@@ -588,6 +617,9 @@ label {
     text-align: start;
 }
 
+.a-clr {
+    color: cyan;
+}
 
 /*             Модальное окно 2                         */
 
@@ -657,9 +689,15 @@ label {
     position: absolute;
     right: 10px;
     top: 10px;
-    font-size: 20px;
+    font-size: 26px;
     color: #000;
     text-decoration: none;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.popup__close:hover {
+   background-color: darkgray;
 }
 
 .popup__title {
@@ -690,11 +728,13 @@ max-width: 49%;
 .form {
 border-radius: 10px;
 width: 100%;
-padding: 30px;
+padding: 15px;
+
 background-color: dimgray;
 color: #fff;
-margin-top: 90px;
+margin-top: 50px;
 margin-left: 30px;
+
 }
 
 .form * {
@@ -784,7 +824,8 @@ textarea.form__input {
     font-weight: 700;
     cursor: pointer;
     border-radius: 20px;
-    transition: background-color 0.5s ease 0s; 
+    transition: background-color 0.5s ease 0s;
+    margin-bottom: 10px; 
 }
 
 .form__button:hover {
@@ -796,12 +837,15 @@ textarea.form__input {
 /*                Контакты                              */
 .contacts {
     font-size: 18PX;
-    width: 80%;
-    padding-top: 30px;
+    width: 350px;
+    margin-top: 50px;
+    padding-top: 15px;
+    padding-bottom: 5px;
     display: flex;
     flex-direction: column;
     align-items: stretch;
-    justify-content: space-around;
+    justify-content: space-between;
+    
 }
 
 .contacts__title {
@@ -810,8 +854,8 @@ textarea.form__input {
 
 }
 
-.contacts__list-item {
-    padding-bottom: 10px;
+.contacts__list-item p {
+   padding-bottom: 10px !important; 
 }
 
 .contacts__list-item.street {
@@ -936,7 +980,9 @@ iframe {
     }
     
     .form_btn { 
-        padding: 8px 5px;
+        width: 76%;
+        padding-top: 10px;
+        padding-bottom: 10px;
         font-size: 14px;
     }
 
@@ -980,8 +1026,8 @@ iframe {
 
 
     .menu__list li {
-        padding-top:10px;
-        padding-bottom: 10px;
+        padding-top:25px;
+        padding-bottom: 25px;
 
     }
     .menu__link {
@@ -1029,6 +1075,7 @@ iframe {
     .page__choice{
         display: flex;
         flex-direction: column;
+        
     }
     .page__main-image-1 img{
         
@@ -1093,12 +1140,31 @@ iframe {
         width: 90%;
       }
 
+      .page__main-image-6 {
+        width: 90%;
+        height: 310px;
+        background: url("../img/bankrot6-tel.jpg") no-repeat 50% 50% ;
+        background-size: cover;
+      }
+
+      .page__choice {
+       width: 90%;   
+      }
+
+
+    .desk {
+        display: none;
+    }
+
+    .tel {
+        display: block;
+    }
     .page__form-item {
         margin-bottom: 20px;
     }
     .contacts {
         font-size: 14px;
-        width: 100%;
+        width: 350px;
     }
     .contacts__list-item {
         padding-bottom: 0px;
