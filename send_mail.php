@@ -29,7 +29,7 @@ if(isset($_POST["sum_of_debt"])){
      $transact = $_POST["transact"];
      $feedback = $_POST["feedback"];
      $name = $_POST["name"];
-     $email = $_POST["email"];
+     //$email = $_POST["email"];
      $phone = $_POST["phone"];
 
      $email_template = "template_mail_b.html";
@@ -43,18 +43,18 @@ if(isset($_POST["sum_of_debt"])){
      $body = str_replace('%transact%',$transact, $body);
      $body = str_replace('%feedback%',$feedback, $body);
      $body = str_replace('%name%',$name, $body);
-     $body = str_replace('%email%',$email, $body);
+     //$body = str_replace('%email%',$email, $body);
      $body = str_replace('%phone%',$phone, $body);
      $theme = "[Заявка с квиза]";
 }else{
      $name = $_POST["name"];
-     $email = $_POST["email"];
+    // $email = $_POST["email"];
      $phone = $_POST["phone"];
 
      $email_template = "template_mail_s.html";
      $body = file_get_contents($email_template);
      $body = str_replace('%name%',$name, $body);
-     $body = str_replace('%email%',$email, $body);
+    // $body = str_replace('%email%',$email, $body);
      $body = str_replace('%phone%',$phone, $body);
      $theme = "[Заявка на консультацию]";
 }
